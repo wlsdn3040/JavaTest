@@ -7,7 +7,6 @@ public class CalGrade {
 		int grade = 0;
 		Scanner sc = new Scanner(System.in);
 		grade = sc.nextInt();
-		
 		if(grade >= 90) System.out.println("A");
 		else if(grade >= 80) System.out.println("B");
 		else if(grade >= 70) System.out.println("C");
