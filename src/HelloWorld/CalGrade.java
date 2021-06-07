@@ -2,7 +2,6 @@ package HelloWorld;
 import java.util.Scanner;
 
 public class CalGrade {
-
 	public static void main(String[] args) {
 		int grade = 0;
 		Scanner sc = new Scanner(System.in);
