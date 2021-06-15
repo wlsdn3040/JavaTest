@@ -60,15 +60,19 @@ public class Bank_Management {
 		System.out.println("+--------------+");
 		System.out.println("입금할 계좌를 입력해주세요: ");
 		String acnum = sc.next();
+		int depmoney = 0;
 		System.out.println("입금할 금액을 입력해주세요: ");
-		int depmoney = sc.nextInt();
+		depmoney = sc.nextInt();
 		if(CheckAccount(acnum)==null) {
 			System.out.println("계좌가 존재하지 않습니다");
 		}
-		else {
+		else if(depmoney >= 0){
 			CheckAccount(acnum).setMoney(CheckAccount(acnum).getMoney() +depmoney);
 			System.out.println("입금완료\n");
 			System.out.println("입금후 잔액:" +CheckAccount(acnum).getMoney());
+		}
+		else if(depmoney <0) {
+			System.out.println("0원보다 큰 금액을 입력하세요.");
 		}
 	}
 		
@@ -78,8 +82,9 @@ public class Bank_Management {
 		System.out.println("+--------------+");
 		System.out.println("출금할 계좌를 입력해주세요: ");
 		String acnum = sc.next();
+		int witmoney = 0;
 		System.out.println("출금할 금액을 입력해주세요: ");
-		int witmoney = sc.nextInt();
+		witmoney = sc.nextInt();
 		if(CheckAccount(acnum)==null) {
 			System.out.println("계좌가 존재하지 않습니다");
 		}
