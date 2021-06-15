@@ -10,10 +10,22 @@ public class Account {
 		this.money = money;
 		this.own = own;
 	}
-	public String getAcnum() {return acnum;}
-	public void setAcnum(String acnum) {this.acnum= acnum;}
-	public String getOwn() {return own;}
-	public void setOwn(String own) {this.own= own;}
-	public int getMoney() {return money;}
-	public void setMoney(int moeny) {this.money= money;}
+	public String getAcnum() {
+		return acnum;
+	}
+	public void setAcnum(String acnum) {
+		this.acnum = acnum;
+	}
+	public String getOwn() {
+		return own;
+	}
+	public void setOwn(String own) {
+		this.own = own;
+	}
+	public int getMoney() {
+		return money;
+	}
+	public void setMoney(int money) {
+		this.money = money;
+	}
 }
