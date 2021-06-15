@@ -1,9 +1,11 @@
 package Bank_Account;
 import java.util.Scanner;
+import java.text.DecimalFormat;
 
 public class Bank_Management {
 	private static Account[] accountArr = new Account[100];
 	private static Scanner sc = new Scanner(System.in);
+	static DecimalFormat fm = new DecimalFormat("###,###");
 	
 	public static void main(String[] args) {
 		boolean op = true;
@@ -49,7 +51,7 @@ public class Bank_Management {
 			if(accountArr[i]==null) {
 			accountArr[i] = new Account(acnum, own, money);
 			System.out.println("계좌 개설 완료");
-			System.out.println("잔액: " +money);
+			System.out.println("잔액: " + fm.format(money));
 			break;
 			}
 		}
@@ -69,7 +71,7 @@ public class Bank_Management {
 		else if(depmoney >= 0){
 			CheckAccount(acnum).setMoney(CheckAccount(acnum).getMoney() +depmoney);
 			System.out.println("입금완료\n");
-			System.out.println("입금후 잔액:" +CheckAccount(acnum).getMoney());
+			System.out.println("입금후 잔액:" +fm.format(CheckAccount(acnum).getMoney()));
 		}
 		else if(depmoney <0) {
 			System.out.println("0원보다 큰 금액을 입력하세요.");
@@ -91,7 +93,7 @@ public class Bank_Management {
 		else if(witmoney < CheckAccount(acnum).getMoney()){
 			CheckAccount(acnum).setMoney(CheckAccount(acnum).getMoney() -witmoney);
 			System.out.println("출금완료\n");
-			System.out.println("출금후 잔액:" +CheckAccount(acnum).getMoney());
+			System.out.println("출금후 잔액:" +fm.format(CheckAccount(acnum).getMoney()));
 		}
 		else if(witmoney > CheckAccount(acnum).getMoney()) {
 			System.out.println("출금할 금액이 더 큽니다.");
@@ -108,7 +110,7 @@ public class Bank_Management {
 			System.out.println("계좌가 존재하지 않습니다");
 		}
 		else {
-			System.out.println("잔액:" +CheckAccount(acnum).getMoney());
+			System.out.println("잔액:" +fm.format(CheckAccount(acnum).getMoney()));
 		}
 	}
 	private static void AccountLists() {
@@ -117,7 +119,7 @@ public class Bank_Management {
 				break;
 			}
 			else{
-				System.out.println("계좌번호: " + accountArr[i].getAcnum() + "\n예금주: " + accountArr[i].getOwn() + "\n잔액: " + accountArr[i].getMoney());
+				System.out.println("계좌번호: " + accountArr[i].getAcnum() + "\n예금주: " + accountArr[i].getOwn() + "\n잔액: " + fm.format(accountArr[i].getMoney()));
 			}
 		}
 	}
